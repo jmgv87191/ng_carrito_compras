@@ -22,7 +22,7 @@ export const products:Product[] = [
     {
         id:4,
         name:'Corsair memoria RAM',
-        description: 'Memoria ram optimizada para videojuegos',
+        description: 'Memoria ram optimizada para ssssssssssssssssssssssssssssssvideojuegos',
         price: 3700
     },
     {
