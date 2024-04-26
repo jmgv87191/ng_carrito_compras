@@ -26,6 +26,10 @@ export class CartAppComponent implements OnInit {
 
   }
 
+  onAddCart( product:Product ){
+    this.items = [...this.items, { product, quantity: 1 } ];
+  }
+
 
 
 }
