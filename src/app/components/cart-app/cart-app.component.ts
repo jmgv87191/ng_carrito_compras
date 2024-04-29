@@ -17,12 +17,14 @@ export class CartAppComponent implements OnInit {
 
   products: Product[] = [];
   items: CartItem[] =[];
+  total:number = 0;
 
   constructor ( private _service:ProductService ){}
 
   ngOnInit(): void {
 
     this.products = this._service.findAll();
+    this.getTotal();
 
   }
 
@@ -44,10 +46,16 @@ export class CartAppComponent implements OnInit {
     }else{
       this.items = [...this.items, { product:{...product}, quantity: 1 } ];
     }
-
-
+    this.getTotal();
   }
 
+  onDeleteCart( id:number ){
+    this.items = this.items.filter( item => item.product.id != id );
+    this.getTotal();  
+  }
 
+  getTotal(  ):void{
+    this.total = this.items.reduce( (accumulator, item) => (accumulator + (item.quantity * item.product.price)) , 0 )
+  }
 
 }
