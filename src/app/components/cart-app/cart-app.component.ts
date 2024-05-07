@@ -5,11 +5,12 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 import { CatalogComponent } from '../catalog/catalog.component';
 import { CartComponent } from '../cart/cart.component';
 import { CartItem } from '../../models/cartItem';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-cart-app',
   standalone: true,
-  imports: [ ProductCardComponent,CatalogComponent, CartComponent],
+  imports: [ ProductCardComponent,CatalogComponent, CartComponent, NavbarComponent],
   templateUrl: './cart-app.component.html',
   styleUrl: './cart-app.component.css'
 })
